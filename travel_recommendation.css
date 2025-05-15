@@ -4,6 +4,7 @@ body {
     background: url(https://cdn.tripster.ru/photos/5bcb7124-569b-4d54-9864-3ba75a09b2fc.jpg);
     background-size: cover; 
     min-height: 100vh;
+    background-position:center;
 }
 h1 {
     color: rgb(245, 240, 240);
@@ -11,11 +12,19 @@ h1 {
     font-size: 60px;
 }
 h2{
-    font-size: large;
+    font-size: 45px;
+    color: rgb(245, 240, 240);
 }
 
 h3 {
-    font-size: larger;
+    font-size: 30px;
+    color: rgb(245, 240, 240);
+    font-style: italic;
+}
+
+h4{
+    font-size: 25px;
+color: rgb(245, 240, 240);
 }
 p {
     color: rgb(245, 240, 240);
@@ -27,10 +36,9 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap; /* предотвратить перенос */
-    padding: 10px 20px;
+    padding: 5px;
     background-color: hsla(0, 1%, 25%, 0.725);
-    gap: 20px; /* необязательно, просто для отступов */
-  }
+    }
   
   .profile_name {
     display: flex;
@@ -39,24 +47,17 @@ p {
   }
   
   .profile_name img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin-right: 10px;
   }
-  
-  .profile_name h1 {
-    margin: 0;
-    font-size: 24px;
-    font-style: italic;
-    color: #ebe9e9;
-  }
-  
-  .topdiv {
+    
+    .topdiv {
     display: flex;
     gap: 20px;
     flex-shrink: 0;
   }
-  
+    
   .topmenu {
     text-decoration: none;
     color: #ebe9e9;
@@ -88,32 +89,54 @@ p {
   }
   
   .searchBar img {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 
   .allText {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+    color: rgb(245, 240, 240);
   }
   .mainText {
-    margin-top: 150px;
-    margin-bottom: 30px;
     margin-left: 30px;
      }
     
   .text{
+    background-color: rgba(0, 0, 0, 0.2);
        width: 400px;
        margin-left: 30px;
      }
 
-    .textAbout  {
-    margin-bottom: 100px;
-    margin-left: 30px;
+.textAbout  {
+    margin-bottom: 50px;
+    margin-left: 40px;
     width: 800px;
-    position: absolute;
     background-color: rgba(0, 0, 0, 0.2);
     } 
+.ourTeam{
+  margin-left:30px;
+  margin-bottom: 5px;
+}
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));
+  gap: 10px;
+  margin-right:10px;
+}
+.member {
+    background-color: #f9f9f966;
+    border-radius: 8px;
+    padding: 5px;
+    
+  }
+  .member p {
+    margin: 8px 0 0;
+    font-size: 16px;
+    color: #555;
+  }
+
+
      #contactForm input,
      #contactForm textarea {
        width: 100%;
