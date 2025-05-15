@@ -4,64 +4,37 @@
   <meta charset="UTF-8">
   <title>Contact Us</title>
   <link rel="stylesheet" href="./travel_recommendation.css">
-  <style>
-    body{
-        text-align: center;
-    }
-    /* Some basic styling for demonstration purposes */
-    #contactForm {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    #contactForm input,
-    #contactForm textarea {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 8px;
-    }
-    #contactForm button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    #contactForm button:hover {
-      background-color: #0056b3;
-    }
-  </style>
 </head>
-<body>
-   <nav>
-        <div class="profile_name">
-            <img
-              src="https://img.icons8.com/?size=100&id=HrxNQff0Qrmc&format=png&color=000000"
-              alt="plane"
-            />
-            <h1>TravelBloom</h1>
-        </div>
-        <div style="clear: both"></div>
-       <div class="topdiv">
-          <a class="topmenu" href="./travel_recommendation.html" id="home">Home </a>
-          <a class="topmenu" href="./travel_recommendation_about.html" id="about">About us</a>
-          <a class="topmenu" href="./travel_recommendation_contact.html" id="contact">Contact Us </a>
-        </div>
-        <div class="searchBar">
-      <input type="text" id="searchInput" placeholder="Enter a destination or keyword">
-      <img
-      src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
-      alt="search"
-    /> 
-<button id='btnSearch'>Search</button>
-<button id='btnReset'>Clear</button> 
-      </div>
-    </nav>
-
+    <body>
+        <nav>
+             <div class="profile_name">
+                 <img
+                   src="https://img.icons8.com/?size=100&id=HrxNQff0Qrmc&format=png&color=000000"
+                   alt="plane"
+                 />
+                 <h3>TravelBloom</h3>
+             </div>
+             <div style="clear: both"></div>
+            <div class="topdiv">
+               <a class="topmenu" href="./travel_recommendation.html" id="home">Home </a>
+               <a class="topmenu" href="./travel_recommendation_about.html" id="about">About us</a>
+               <a class="topmenu" href="./travel_recommendation_contact.html" id="contact">Contact Us </a>
+             </div>
+             <div class="searchBar">
+           <input type="text" id="searchInput" placeholder="Enter a destination or keyword">
+           <img
+           src="https://img.icons8.com/?size=100&id=132&format=png&color=000000"
+           alt="search"
+         /> 
+     <button id='btnSearch'>Search</button>
+     <button id='btnReset'>Clear</button> 
+           </div>
+         </nav>
+     <div class="contactContainer">
    <h1>Contact Us</h1>
-  <p>Feel free to contact us to know more about your conditions and for treatment methods.</p>
-
-  <form id="contactForm">
-    <div>
+   <div>
+    <form id="contactForm">
+    <div class="formContact">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required>
     </div>
@@ -69,16 +42,13 @@
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
     </div>
-    <div>
-      <label for="condition">Condition</label>
-      <input type="text" id="condition" name="condition" required>
-    </div>
-    <div>
-      <label for="message">Message</label>
+     <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
     </div>
     <button type="submit" onclick="thankyou()">Submit</button>
   </form>
+</div>
+</div>
   <script>
     function thankyou(){
         alert('Thank you for contacting us!')
