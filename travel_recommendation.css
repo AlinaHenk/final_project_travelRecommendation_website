@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* предотвратить перенос */
+    padding: 10px 20px;
+    background-color: hsla(0, 1%, 25%, 0.725);
+    gap: 20px; /* необязательно, просто для отступов */
+  }
+  
+  .profile_name {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .profile_name img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .profile_name h1 {
+    margin: 0;
+    font-size: 24px;
+    font-style: italic;
+    color: #ebe9e9;
+  }
+  
+  .topdiv {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+  
+  .topmenu {
+    text-decoration: none;
+    color: #ebe9e9;
+    font-weight: bold;
+  }
+  
+  .searchBar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 1;
+  }
+  
+  .searchBar input {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 15px;
+    color: rgb(101, 134, 101);
+    border: none;
+  }
+  
+  .searchBar button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 15px;
+    color: #ebe9e9;
+    background-color: rgb(101, 134, 101);
+    border: none;
+  }
+  
+  .searchBar img {
+    width: 20px;
+    height: 20px;
+  }
