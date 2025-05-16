@@ -36,10 +36,28 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap; /* предотвратить перенос */
-    padding: 5px;
+    padding: 5px 30px;
     background-color: hsla(0, 1%, 25%, 0.725);
     }
-  
+
+.navLeft,
+.navCenter,
+.navRight {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.navLeft {
+    justify-content: flex-start;
+}
+.navCenter {
+    justify-content: center;
+}
+.navRight {
+    justify-content: flex-end;
+}
+
+
   .profile_name {
     display: flex;
     align-items: center;
@@ -75,7 +93,7 @@ p {
     padding: 5px;
     font-size: 14px;
     border-radius: 15px;
-    color: rgb(101, 134, 101);
+    color:rgb(122, 122, 194);
     border: none;
   }
   
@@ -84,7 +102,7 @@ p {
     font-size: 14px;
     border-radius: 15px;
     color: #ebe9e9;
-    background-color: rgb(101, 134, 101);
+    background-color: rgb(122, 122, 194);
     border: none;
   }
   
@@ -157,11 +175,11 @@ p {
      }
      #contactForm button {
        padding: 10px 20px;
-       background-color: #b7c1b5cc;
-       color: #ffffffdb;
+       background-color: rgb(122, 122, 194);
+       color:rgb(245, 240, 240);
        border: none;
        cursor: pointer;
      }
      #contactForm button:hover {
-       background-color: #0056b3;
+       background-color: #67a6e9;
      }
