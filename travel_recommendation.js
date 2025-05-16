@@ -1,55 +1,84 @@
-const report = document.getElementById("report");
-const btnSearch = document.getElementById('btnSearch');
+document.getElementById('btnSearch').addEventListener('click', searchRecommendation);
+document.getElementById('searchInput').addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    searchRecommendation();
+  }
+});
 
-function searchRecomendation() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '';
-    resultDiv.style.display = 'none';
+document.getElementById('btnReset').addEventListener('click', () => {
+  const input = document.getElementById('searchInput');
+  const resultDiv = document.getElementById('result');
+  input.value = '';  
+  resultDiv.innerHTML = '';
+  resultDiv.style.display = 'none'; });
 
-    fetch('travel_recommendation_api.json')
-      .then(response => response.json())
-      .then(data => {
-        const matches = [];
 
-        data.countries.forEach(country => {
-            country.cities.forEach(city => {
-              const nameMatch = city.name.toLowerCase().includes(input);
-              const descMatch = city.description.toLowerCase().includes(input);
-    
-              if (nameMatch || descMatch) {
-                matches.push(city);
-              }
-            });
+function searchRecommendation() {
+  const input = document.getElementById('searchInput').value.toLowerCase().trim();
+  const resultDiv = document.getElementById('result');
+  resultDiv.innerHTML = '';
+  resultDiv.style.display = 'none';
+
+  if (input === '') return;
+
+  fetch('travel_recommendation_api.json')
+    .then(response => response.json())
+    .then(data => {
+      const matches = [];
+
+ data.countries.forEach(country => {
+        const countryName = country.name.toLowerCase();
+        if (countryName.includes(input)) {
+          country.cities.forEach(city => matches.push(city));
+        } else {
+          country.cities.forEach(city => {
+            if (
+              city.name.toLowerCase().includes(input)
+            //  ||
+            //   city.description.toLowerCase().includes(input)
+            ) {
+              matches.push(city);
+            }
           });
-          if (matches.length > 0) {
-            resultDiv.style.display = 'block';
-            matches.forEach(city => {
-              resultDiv.innerHTML += `
-                <div>
-                  <img src="${city.imageUrl}" alt="${city.name}">
-                  <h2>${city.name}</h2>
-                  <p>${city.description}</p>
-                </div>
-              `;
-            });
-          } else {
-            resultDiv.innerHTML = '<p>No recommendations found.</p>';
-            resultDiv.style.display = 'block';
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          resultDiv.style.display = 'block';
-          resultDiv.innerHTML = '<p>An error occurred while fetching data.</p>';
-        });
-    }
-    
-    document.getElementById('btnSearch').addEventListener('click', searchRecomendation);
-
-
-   document.getElementById('btnReset').addEventListener('click', () => {
-        document.getElementById('searchInput').value = '';
-        document.getElementById('result').innerHTML = '';
-        resultDiv.style.display = 'none';
+        }
       });
+
+if (input.includes('country') || input === 'countries') {
+        data.countries.forEach(country => matches.push(country));
+      }
+
+  if (input.includes('temple') || input === 'temples') {
+        data.temples.forEach(temple => matches.push(temple));
+      }
+
+ if (input.includes('beach') || input === 'beaches') {
+        data.beaches.forEach(beach => matches.push(beach));
+      }
+
+  if (matches.length > 0) {
+        resultDiv.style.display = 'flex';
+        matches.forEach(item => {
+          resultDiv.innerHTML += `
+            <div class="card">
+              <img src="${item.imageUrl}" alt="${item.name}" />
+              <h3>${item.name}</h3>
+              <p>${item.description}</p>
+            </div>
+          `;
+        });
+      } else {
+        resultDiv.style.display = 'flex';
+        resultDiv.innerHTML = `<p>No recommendations found.</p>`;
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      resultDiv.innerHTML = 'An error occurred while fetching data.';
+      resultDiv.style.display = 'flex';
+    });
+}
+
+
+
+// ...
+resultDiv.style.display = 'flex'; // при нахождении результатов
