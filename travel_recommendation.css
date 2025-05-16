@@ -35,7 +35,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* предотвратить перенос */
+    flex-wrap: nowrap; 
     padding: 5px 30px;
     background-color: hsla(0, 1%, 25%, 0.725);
     }
@@ -209,7 +209,7 @@ p {
 }
 
 #result {
-  display: none; /* скрыт по умолчанию */
+  display: none; 
   flex-direction: column;
   gap: 10px;
   width: 500px;

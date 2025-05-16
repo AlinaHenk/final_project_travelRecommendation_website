@@ -34,8 +34,8 @@ function searchRecommendation() {
           country.cities.forEach(city => {
             if (
               city.name.toLowerCase().includes(input)
-            //  ||
-            //   city.description.toLowerCase().includes(input)
+              ||
+              city.description.toLowerCase().includes(input)
             ) {
               matches.push(city);
             }
@@ -43,11 +43,7 @@ function searchRecommendation() {
         }
       });
 
-if (input.includes('country') || input === 'countries') {
-        data.countries.forEach(country => matches.push(country));
-      }
-
-  if (input.includes('temple') || input === 'temples') {
+ if (input.includes('temple') || input === 'temples') {
         data.temples.forEach(temple => matches.push(temple));
       }
 
@@ -77,8 +73,3 @@ if (input.includes('country') || input === 'countries') {
       resultDiv.style.display = 'flex';
     });
 }
-
-
-
-// ...
-resultDiv.style.display = 'flex'; // при нахождении результатов
