@@ -189,13 +189,9 @@ p {
        background-color: #67a6e9;
      }
 
-/* .searchArea {
-  position: relative;
-} */
-
-#result {
+/* #result {
   position: absolute;
-  top: 45px; /* ниже поля поиска */
+  top: 45px; 
   left: 0;
   width: 300px;
   background-color: rgba(255, 255, 255, 0.95);
@@ -223,4 +219,42 @@ p {
   max-width: 100%;
   border-radius: 6px;
   margin-bottom: 5px;
+} */
+
+.allText {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 40px;
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+
+.searchResults {
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+  display: none;
+}
+
+.searchResults h2 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  color: #222;
+}
+
+.searchResults p {
+  font-size: 14px;
+  color: #444;
+}
+
+.searchResults img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
